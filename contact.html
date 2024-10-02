@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="mainstyle.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <nav>
+        <ul class="nav-bar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="montgomery.html">Montgomery</a></li>
+            <li><a href="huntsville.html">Huntsville</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div>
+        <p id="contact-note">If you have any questions, feel free to reach out to us using the form. We will respond as soon as possible.</p>
+    </div>
+        <form id="contactForm">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required><br><br>
+            
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required><br><br>
+            
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required><br><br>
+            
+            <label for="confirmEmail">Confirm Email Address:</label>
+            <input type="email" id="confirmEmail" name="confirmEmail" placeholder="Confirm your email address" required><br><br>
+            
+            <label for="question">Your Question:</label>
+            <textarea id="question" name="question" placeholder="Type your question here..." rows="5" required></textarea><br><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    <footer>
+        <p>&copy; 2024. UCM1 — UCM1 Task 2: Multipage Website - Alabama <a href="references.html" target="_blank">References</a></p>
+    </footer>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            var email = document.getElementById('email').value;
+            var confirmEmail = document.getElementById('confirmEmail').value;
+            
+            if (email !== confirmEmail) {
+                alert('Email addresses do not match. Please try again.');
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
